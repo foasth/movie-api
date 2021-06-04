@@ -1,6 +1,5 @@
-const mongoose = require('mongoose')
-
-mongoose.connect('mongodb+srv://admin:admin@cluster0.b55wd.mongodb.net/moviedb?retryWrites=true&w=majority', {useNewUrlParser: true},
+const mongoose = require('mongoose');
+mongoose.connect('mongodb+srv://admin:admin@cluster0.bctfd.mongodb.net/moviesdb?retryWrites=true&w=majority', {useNewUrlParser: true},
     (err) => {
         if (!err) {
             console.log('Successfully Established Connection with MongoDB')
@@ -9,4 +8,3 @@ mongoose.connect('mongodb+srv://admin:admin@cluster0.b55wd.mongodb.net/moviedb?r
         }
     });
 module.exports = mongoose
-
