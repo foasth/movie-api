@@ -43,7 +43,8 @@ module.exports.EDIT_MOVIE =(req,res)=>{
     Movie.findByIdAndUpdate(id,{
         title: req.body.title,
         description :req.body.description,
-        rating: req.body.rating
+        rating: req.body.rating,
+        poster: req.body.poster
     })
     .then(ok=>{
         res.send('OK')

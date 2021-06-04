@@ -10,6 +10,9 @@ const movieSchema = mongoose.Schema({
     },
     rating:{
         type: Number
+    },
+    poster:{
+        type: String
     }
 })
 module.exports = mongoose.model('Movie',movieSchema) 
