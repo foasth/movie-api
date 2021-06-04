@@ -12,4 +12,6 @@ const movieSchema = mongoose.Schema({
         type: Number
     }
 })
-module.exports = mongoose.model('Movie',movieSchema)
+module.exports = mongoose.model('Movie',movieSchema) 
+
+
