@@ -38,6 +38,21 @@ module.exports.ALL_MOVIES =(req,res)=>{
 
 module.exports.EDIT_MOVIE =(req,res)=>{
 
+    const id =req.body._id
+    if(!id) return res.send('NO ID')
+    Movie.findByIdAndDelete(id,{
+        title: req.body.title,
+        description :req.body.description,
+        rating: req.body.rating
+    })
+    .then(ok=>{
+        res.send('OK')
+
+    })
+    .catch(err=>{
+        res.send('NOT OK')
+    })
+
 }
 
 module.exports.DELETE_MOVIE =(req,res)=>{
