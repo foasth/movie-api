@@ -12,7 +12,7 @@ module.exports.SEND_DATA = (req,res)=>{
     res.send('OK!')
 
 }
-gghgvhmodule.exports.ADD_MOVIE =(req,res)=>{
+module.exports.ADD_MOVIE =(req,res)=>{
     
     console.log(req.body)
     const movie = new Movie(req.body)
