@@ -15,13 +15,29 @@ module.exports.SEND_DATA = (req,res)=>{
 module.exports.ADD_MOVIE =(req,res)=>{
     
     console.log(req.body)
+    if(!req.body.title){
+        return res.send({error:true,msg:'Title required'})
+    }
+    if(!req.body.description){
+        return res.send({error:true,msg:'Description required'})
+    }
+    if(!req.body.rating){
+        return res.send({error:true,msg:'Rating required'})
+    }
+    if(req.body.rating > 5 || req.body.rating < 0 || !Number(req.body.rating)){
+        return res.send({error:true,msg:'Rating Invalid'})
+    }
+    if(!req.body.poster){
+        return res.send({error:true,msg:'Poster required'})
+    }
     const movie = new Movie(req.body)
     movie.save(req.body)
         .then(ok=>{
-            res.send('OK')
+            res.send({error:false,msg:'Movie Added'})
         })
         .catch(err=>{
-            res.send('NOT OK')
+            console.log(err)
+            res.send({error:true,msg:'Movie not Added'})
         })
 }
 module.exports.ALL_MOVIES =(req,res)=>{
